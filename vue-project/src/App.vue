@@ -1,12 +1,19 @@
 <script>
-export default{
-name: 'App',
-}
+  export default {
+    data() {
+      return {
+        name: 'main',
+        surname: 'steve',
+      }
+    }
+  }
 </script>
 
 <template>
-  <div class="crazy">crazy</div>
+  <div class="crazy">{{ name }}</div>
+  <div class="crazy">{{ surname }}</div>
 </template>
 
-<style>
+<style scoped>
+
 </style>
