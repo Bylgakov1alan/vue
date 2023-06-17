@@ -1,5 +1,6 @@
 <script>
   import crazy from './components/Employee.vue'
+  import crazyForm from './components/crazyForm.vue'
 
 
   export default {
@@ -8,13 +9,13 @@
         crazys: [
           {
             id: 1,
-            name: 'vizer',
-            surn: 'ad'
+            name: 'ad',
+            surn: 'vizer'
           },
           {
             id: 2,
-            name: 'world',
-            surn: 'steve'
+            name: 'steve',
+            surn: 'world'
           },
           {
             id: 3,
@@ -26,16 +27,13 @@
       }
     },
     components: {
-      crazy
+      crazy, crazyForm
     },
     methods: {
-      change(id, name, surn) {
-        this.crazys = this.crazys.map((crazy) => {
-          if (crazy.id === id) {
-            crazy.name = name;
-            crazy.surn = surn;
-          }
-          return crazy;
+      add(name, surn) {
+        let id = this.crazys.length + 1;
+        this.crazys.push({
+          id, name, surn
         });
       }
     }
@@ -44,8 +42,7 @@
 </script>
 
 <template>
-  <crazy v-for="crazy in crazys" :id="crazy.id" :name="crazy.name" :surn="crazy.surn" :key="crazy.id"
-    @change="change" />
+  <crazyForm @add="add" />
 </template>
 
 
