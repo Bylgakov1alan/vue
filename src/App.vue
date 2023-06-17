@@ -3,12 +3,12 @@
     data() {
       return {
         newcrazy: '',
-        crazys: ['steve', 'pig', 'dragon', 'vizer', 'skelet'],
+        crazys: ['steve', 'dragon', 'pig', 'vizer', 'skelet'],
       }
     },
     methods: {
-      addcrazy: function () {
-        this.crazys.unshift(this.newcrazy);
+      removecrazy: function (index) {
+        this.crazys.splice(index, 1);
       }
     }
   }
@@ -19,11 +19,10 @@
     <li v-for="(crazy, index) in 
 			crazys" :key="index">
       {{ crazy }}
+      <br>
+      <button class="button" @click="removecrazy(index)">remove</button>
     </li>
   </ul>
-  <input class="text-field__input" v-model="newcrazy">
-  <br>
-  <button class="button" @click="addcrazy">add</button>
 </template>
 
 <style scoped>
