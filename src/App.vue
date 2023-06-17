@@ -2,23 +2,30 @@
   export default {
     data() {
       return {
-        checked: true,
-        visible: true,
+        lang: [],
       }
     },
     methods: {
-      toggle: function () {
-        this.checked = false;
-        this.visible = !this.visible;
-      },
+
     }
   }
 </script>
 
 <template>
-  <input class="text-field__input" type="checkbox" v-model="checked">
-  <button class="button" @click="toggle">toggle</button>
-  <p class="crazy" v-if="visible">{{ checked ? 'steve' : 'dragon' }}</p>
+  <div class="crazy">
+    <input class="crazy" type="checkbox" v-model="lang" value="js">
+    <label>JS</label>
+    <br>
+    <input class="crazy" type="checkbox" v-model="lang" value="c++">
+    <label>C++</label>
+    <br>
+    <input class="crazy" type="checkbox" v-model="lang" value="java">
+    <label>java</label>
+    <ol>
+      <li v-for="elem in lang">{{ elem }}</li>
+    </ol>
+  </div>
+  <br>
 </template>
 
 <style scoped>
