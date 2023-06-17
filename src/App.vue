@@ -2,22 +2,28 @@
   export default {
     data() {
       return {
-        crazy: ' ',
-        crazys: ' '
+        newcrazy: '',
+        crazys: ['steve', 'pig', 'dragon', 'vizer', 'skelet'],
       }
     },
     methods: {
-      // vm.submit()
+      addcrazy: function () {
+        this.crazys.unshift(this.newcrazy);
+      }
     }
   }
 </script>
 
 <template>
-  <input class="text-field__input" v-model="crazy" v-on:keyup.enter="submit">
-  <p>{{ crazy }}</p>
+  <ul class="styled">
+    <li v-for="(crazy, index) in 
+			crazys" :key="index">
+      {{ crazy }}
+    </li>
+  </ul>
+  <input class="text-field__input" v-model="newcrazy">
   <br>
-  <a href="#" class="inline-link-1" v-on:keyup.ctrl="sub">steve</a>
-  <p></p>
+  <button class="button" @click="addcrazy">add</button>
 </template>
 
 <style scoped>
