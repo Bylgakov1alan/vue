@@ -2,7 +2,7 @@
   export default {
     data() {
       return {
-        lang: [],
+        sity: 'Симферополь',
       }
     },
     methods: {
@@ -12,20 +12,13 @@
 </script>
 
 <template>
-  <div class="crazy">
-    <input class="crazy" type="checkbox" v-model="lang" value="js">
-    <label>JS</label>
-    <br>
-    <input class="crazy" type="checkbox" v-model="lang" value="c++">
-    <label>C++</label>
-    <br>
-    <input class="crazy" type="checkbox" v-model="lang" value="java">
-    <label>java</label>
-    <ol>
-      <li v-for="elem in lang">{{ elem }}</li>
-    </ol>
-  </div>
-  <br>
+  <p class="crazy">В каком городе вы живете?</p>
+  <select class="crazy" v-model="sity">
+    <option>Симферополь</option>
+    <option>Севастополь</option>
+    <option>Ялта</option>
+  </select>
+  <p>{{ sity }}</p>
 </template>
 
 <style scoped>
