@@ -2,24 +2,20 @@
   export default {
     data() {
       return {
-        hidden: true,
+        isAuth: true,
       }
     },
     methods: {
-      hide: function () {
-        this.hidden = false;
+      toggle: function () {
+        this.isAuth = false;
       }
     }
   }
 </script>
 
 <template>
-  <button class="button" @click="hide">hide</button>
-  <div v-if="hidden">
-    <p class="crazy">+++</p>
-    <p class="crazy">+++</p>
-    <p class="crazy">+++</p>
-  </div>
+  <button class="button" @click="toggle">toggle</button>
+  <p class="crazy" v-show="isAuth">steve</p>
 </template>
 
 <style scoped>
