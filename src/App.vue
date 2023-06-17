@@ -5,6 +5,23 @@
   export default {
     data() {
       return {
+        crazys: [
+          {
+            id: 1,
+            name: 'vizer',
+            surn: 'ad'
+          },
+          {
+            id: 2,
+            name: 'steve',
+            surn: 'world'
+          },
+          {
+            id: 3,
+            name: 'dragon',
+            surn: 'kray'
+          },
+        ],
 
       }
     },
@@ -12,16 +29,19 @@
       crazy
     },
     methods: {
-      crazyName(name) {
-        console.log(name);
-      },
+      remove(id) {
+        this.crazys = this.crazys.filter((crazy) => {
+          return crazy.id !== id;
+        })
+      }
     }
   }
 
 </script>
 
 <template>
-  <crazy @show="crazyName" />
+  <crazy v-for="crazy in crazys" :id="crazy.id" :name="crazy.name" :surn="crazy.surn" @remove="remove"
+    :key="crazy.id" />
 </template>
 
 
