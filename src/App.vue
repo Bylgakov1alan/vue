@@ -21,23 +21,35 @@
             salary: 300,
             age: 25,
           },
-        ],
+        ]
       }
     },
     methods: {
-      removecrazy: function (id) {
-        this.crazys = this.crazys.filter((crazy) => {
-          return crazy.id !== id;
-        })
-      }
+      edit(crazy) {
+        crazy.isEdit = true;
+      },
+      save(crazy) {
+        crazy.isEdit = false;
+      },
     }
   }
 </script>
 
 <template>
+
   <table class="crazy">
-    <tr v-for="crazy in crazys" :key="crazy.id"> {{ crazy.name }} {{ crazy.salary }} {{ crazy.age }} <button
-        class="button" @click="removecrazy(crazys.id)">remove</button>
+    <tr v-for="crazy in crazys" :key="crazy.id">
+      <template v-if="!crazy.isEdit">
+        {{ crazy.name }} {{ crazy.salary }} {{ crazy.age }}<button class="button" @click="edit(crazy)">edit</button>
+      </template>
+      <template v-else>
+        <input v-model="crazy.name">
+        <input v-model="crazy.salary">
+        <input v-model="crazy.age">
+        <button class="button" @click="save(crazy)">
+          save
+        </button>
+      </template>
     </tr>
   </table>
 </template>
