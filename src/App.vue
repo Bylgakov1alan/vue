@@ -2,25 +2,23 @@
   export default {
     data() {
       return {
-        crazy: ' ',
+        checked: true,
+        visible: true,
       }
     },
     methods: {
-      list: function () {
-
-      }
+      toggle: function () {
+        this.checked = false;
+        this.visible = !this.visible;
+      },
     }
   }
 </script>
 
 <template>
-  <textarea class="text-field__input" v-model="crazy"></textarea>
-  <p class="crazy">{{ crazy }}</p>
-  <br>
-  <button class="button" @click="list">lists</button>
-  <ul>
-    <li v-for="craz in crazy">{{ craz }}</li>
-  </ul>
+  <input class="text-field__input" type="checkbox" v-model="checked">
+  <button class="button" @click="toggle">toggle</button>
+  <p class="crazy" v-if="visible">{{ checked ? 'steve' : 'dragon' }}</p>
 </template>
 
 <style scoped>
