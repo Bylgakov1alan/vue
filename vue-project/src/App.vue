@@ -2,23 +2,24 @@
   export default {
     data() {
       return {
+        text: 'one hargreaves',
       }
     },
     methods: {
-      show: function (str) {
-        alert(str * str);
+      change: function () {
+        this.text = 'five hargreaves';
       },
-      show1: function (str1) {
-        alert(str1 * str1)
+      change2: function () {
+        this.text = 'two hargreaves'
       }
     }
   }
 </script>
 
 <template>
-  <button class="button" @click="show(2)">btn1</button>
-  <button class="button
-" @click="show1(3)">btn2</button>
+  <p class="crazy">{{ text }}</p>
+  <button class="button" @click="change">text1</button>
+  <button class="button" @click="change2">text2</button>
 </template>
 
 <style scoped>
