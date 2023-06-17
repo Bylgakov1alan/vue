@@ -1,29 +1,21 @@
 <script>
   export default {
     data() {
-      return {
-        cost: '120',
-        amount: '5',
-      }
-    },
-    computed: {
-      price: function () {
-        return this.cost * this.amount;
-      }
+
     },
     methods: {
-      change: function () {
-        this.cost = '150'
+      show: function () {
+        alert(new Date().toLocaleDateString());
       }
     }
   }
 </script>
 
 <template>
-  <p class="crazy">{{ cost }}</p>
-  <p class="crazy">{{ amount }}</p>
-  <p class="crazy">{{ price }}</p>
-  <button class="button" @click="change">cost</button>
+  <a class="inline-link-1" href="https://www.google.ru/" onclick="event.preventDefault()">Link</a>
+  <br>
+  <br>
+  <button class="button" @click.once="show">click</button>
 </template>
 
 <style scoped>
