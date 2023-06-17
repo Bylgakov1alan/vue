@@ -9,7 +9,7 @@
 </script>
 
 <template>
-  <crazy />
+  <crazy name="dragon" surn="steve" age="19" />
 </template>
 
 <style scoped>
