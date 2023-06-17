@@ -2,17 +2,30 @@
   export default {
     data() {
       return {
-        hidden: true,
-        hidden1: false,
+        visible: true,
+        btnHide: true,
+        btnVis: false,
       }
     },
+    methods: {
+      hide: function () {
+        this.visible = false;
+        this.btnHide = false;
+        this.btnVis = true;
+      },
+      vis: function () {
+        this.visible = true;
+        this.btnHide = true;
+        this.btnVis = false;
+      }
+    }
   }
 </script>
 
 <template>
-  <p class="crazy" v-if="hidden">dragon</p>
-  <p class="crazy" v-if="!hidden1">steve</p>
-
+  <button class="button" @click="hide" v-if="btnHide">hide</button>
+  <button class="button" @click="vis" v-if="btnVis">visible</button>
+  <p class="crazy" v-if="visible">text</p>
 </template>
 
 <style scoped>
