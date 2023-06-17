@@ -2,19 +2,24 @@
   export default {
     data() {
       return {
-        age: 27,
+        hidden: true,
       }
     },
     methods: {
-
+      hide: function () {
+        this.hidden = false;
+      }
     }
   }
 </script>
 
 <template>
-  <p class="crazy" v-if="age < 18">Подросток</p>
-  <p class="crazy" v-else-if="19 < age && age < 25">Молодой человек</p>
-  <p class="crazy" v-else="age > 26">Мужчина</p>
+  <button class="button" @click="hide">hide</button>
+  <div v-if="hidden">
+    <p class="crazy">+++</p>
+    <p class="crazy">+++</p>
+    <p class="crazy">+++</p>
+  </div>
 </template>
 
 <style scoped>
