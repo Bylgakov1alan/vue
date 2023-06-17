@@ -9,8 +9,9 @@
 </script>
 
 <template>
-  <crazy name="dragon" surn="steve" age="19" />
+  <crazy :name="['steve', 'vizer', 'dragon', 'zombie', 'pig', 'skelet']" />
 </template>
+
 
 <style scoped>
 

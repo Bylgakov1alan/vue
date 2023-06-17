@@ -1,16 +1,16 @@
 <script>
-export default {
-    props: ['name', 'surn', 'age'],
+  export default {
+    props: ['name'],
     data() {
-        return {
+      return {
 
-        }
+      }
     }
-}
+  }
 </script>
 
 <template>
-   <p class="crazy">{{ name }}</p>
-   <p class="crazy">{{ surn }}</p>
-   <p class="crazy">{{ age }}</p>
+  <ul class="styled">
+    <li v-for="crazy in name">{{ crazy }}</li>
+  </ul>
 </template>
