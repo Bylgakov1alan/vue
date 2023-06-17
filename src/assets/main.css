@@ -88,3 +88,8 @@
   font-weight: bold;
   color: rgba(234, 107, 234, 0.711);
 }
+
+.text-field__input {
+  background-color: #91d4f5;
+  opacity: 1;
+}
