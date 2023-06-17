@@ -2,36 +2,26 @@
   export default {
     data() {
       return {
-        visible: true,
-        styles: {
-          hidden: true,
-        },
+
       }
     },
     methods: {
-      setDone: function () {
-        this.styles.hidden = false;
-      },
-      setTwo: function () {
-        this.styles.hidden = true;
-      },
-      toggle: function () {
-        this.visible = !this.visible;
-      }
+
     }
   }
 </script>
 
 <template>
-  <button class="button" @click="toggle">toggle</button>
-  <p class="crazy" v-if="visible">dragon</p>
-  <p :class="styles">steve</p>
-  <button class="button" @click="setDone">visible</button>
-  <button class="button" @click="setTwo">hide</button>
+  <p :class="{active: true, error: false}">steve</p>
 </template>
 
 <style scoped>
-  p.hidden {
-    display: none;
+  p.active {
+    padding: 10px;
+    margin: 10px;
+    background: #08C;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
   }
 </style>
