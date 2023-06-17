@@ -2,7 +2,7 @@
   export default {
     data() {
       return {
-        obj: { steve: '100$', dragon: '200$', zombie: '300$' },
+        items: [1, 2, 3],
       }
     },
     methods: {
@@ -12,23 +12,14 @@
 </script>
 
 <template>
-  <ul class="styled">
-    <li v-for="elem in obj">{{ elem }}</li>
-  </ul>
+  <div v-for="elem in items">
+    <p class="crazy">{{ elem }}</p>
+    <p class="divider"> </p>
+  </div>
   <br>
-  <br>
-  <ul class="styled">
-    <li v-for="(key, elem) in obj"> {{ elem }} - {{ key }}</li>
-  </ul>
-  <br>
-  <br>
-  <ul class="styled">
-    <li v-for="(key, elem, index) in obj"> {{ elem }} - {{ key }} - {{ index }}</li>
-  </ul>
-  <br>
-  <br>
-  <ul class="styled">
-    <li v-for="(key, elem, index) in obj"> {{ elem }} - {{ key }} - {{ index+1 }}</li>
+  <ul class="styled" v-for="elem in items">
+    <li>{{ elem }}</li>
+    <li class="divider"> </li>
   </ul>
 </template>
 
