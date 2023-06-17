@@ -2,22 +2,35 @@
   export default {
     data() {
       return {
-        message: '',
-        number: '',
+        num: 0,
+        res: 0,
+        sum: 0,
+        num1: 0,
+        num2: 0,
       }
     },
     methods: {
-
+      calc: function () {
+        this.res = Math.sqrt(this.num);
+      },
+      summary: function () {
+        this.sum = this.num1 + this.num2;
+      }
     }
   }
 </script>
 
 <template>
-  <input class="text-field__input" v-model="message">
-  <p class="crazy" :style="{textTransform: 'uppercase'}">{{ message }}</p>
+  <p class="crazy">{{ res }}</p>
+  <input class="text-field__input" v-model="num">
+  <button class="button" @click="calc">sqrt</button>
   <br>
-  <input class="text-field__input" v-model="number">
-  <p class="crazy">{{ number*number }}</p>
+  <p class="crazy">{{ sum }}</p>
+  <input class="text-field__input" v-model=num1>
+  <input class="text-field__input" v-model=num2>
+  <button class="button" @click="summary">summary</button>
+  <br>
+
 </template>
 
 <style scoped>
