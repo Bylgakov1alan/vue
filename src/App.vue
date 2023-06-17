@@ -13,8 +13,8 @@
           },
           {
             id: 2,
-            name: 'steve',
-            surn: 'world'
+            name: 'world',
+            surn: 'steve'
           },
           {
             id: 3,
@@ -29,10 +29,14 @@
       crazy
     },
     methods: {
-      remove(id) {
-        this.crazys = this.crazys.filter((crazy) => {
-          return crazy.id !== id;
-        })
+      change(id, name, surn) {
+        this.crazys = this.crazys.map((crazy) => {
+          if (crazy.id === id) {
+            crazy.name = name;
+            crazy.surn = surn;
+          }
+          return crazy;
+        });
       }
     }
   }
@@ -40,8 +44,8 @@
 </script>
 
 <template>
-  <crazy v-for="crazy in crazys" :id="crazy.id" :name="crazy.name" :surn="crazy.surn" @remove="remove"
-    :key="crazy.id" />
+  <crazy v-for="crazy in crazys" :id="crazy.id" :name="crazy.name" :surn="crazy.surn" :key="crazy.id"
+    @change="change" />
 </template>
 
 
