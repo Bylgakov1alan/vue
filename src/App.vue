@@ -2,27 +2,44 @@
   export default {
     data() {
       return {
-        newcrazy: '',
-        crazys: ['steve', 'dragon', 'pig', 'vizer', 'skelet'],
+        crazys: [
+          {
+            id: 1,
+            name: 'vizer',
+            salary: 100,
+            age: 19,
+          },
+          {
+            id: 2,
+            name: 'dragon',
+            salary: 200,
+            age: 18,
+          },
+          {
+            id: 3,
+            name: 'steve',
+            salary: 300,
+            age: 25,
+          },
+        ],
       }
     },
     methods: {
-      removecrazy: function (index) {
-        this.crazys.splice(index, 1);
+      removecrazy: function (id) {
+        this.crazys = this.crazys.filter((crazy) => {
+          return crazy.id !== id;
+        })
       }
     }
   }
 </script>
 
 <template>
-  <ul class="styled">
-    <li v-for="(crazy, index) in 
-			crazys" :key="index">
-      {{ crazy }}
-      <br>
-      <button class="button" @click="removecrazy(index)">remove</button>
-    </li>
-  </ul>
+  <table class="crazy">
+    <tr v-for="crazy in crazys" :key="crazy.id"> {{ crazy.name }} {{ crazy.salary }} {{ crazy.age }} <button
+        class="button" @click="removecrazy(crazys.id)">remove</button>
+    </tr>
+  </table>
 </template>
 
 <style scoped>
