@@ -15,16 +15,13 @@
       crazyName(name) {
         console.log(name);
       },
-      crazySalary(name, salary) {
-        console.log(name, salary);
-      }
     }
   }
 
 </script>
 
 <template>
-  <crazy @show="crazyName" @show1="crazySalary" />
+  <crazy @show="crazyName" />
 </template>
 
 
