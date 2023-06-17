@@ -12,11 +12,11 @@
       crazy
     },
     methods: {
-      lightwood() {
-        alert('book, horse, pig, zombie');
+      crazyName(name) {
+        console.log(name);
       },
-      herondale() {
-        alert('steve, dragon, viazer, skelet')
+      crazySalary(name, salary) {
+        console.log(name, salary);
       }
     }
   }
@@ -24,7 +24,7 @@
 </script>
 
 <template>
-  <crazy @show="lightwood" @show1="herondale" />
+  <crazy @show="crazyName" @show1="crazySalary" />
 </template>
 
 
