@@ -11,7 +11,6 @@
   background: #0AF
 }
 
-
 .button {
   background-color: #852354;
   /* border: none; */
@@ -25,7 +24,6 @@
   cursor: pointer;
   border-radius: 14px;
 }
-
 
 .inline-link-3 {
   display: inline-block;
@@ -53,7 +51,6 @@
 .inline-link-3:hover:before {
   color: #0daf28;
 }
-
 
 .inline-link-1 {
   display: inline-block;
