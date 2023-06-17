@@ -2,31 +2,65 @@
   export default {
     data() {
       return {
-        num1: 1,
-        num2: 2,
-        text: 'alec'
+        date: '1'
       }
     },
     methods: {
       show: function () {
-        let text = this.cape(this.text)
-        alert(text);
-        // alert(this.num1 + this.num2);
+        let date = this.dayOfWeek(this.date);
+        // const dayOfWeekDigit = new Date().getDay();
+        // let days = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье']
+        alert(date);
       },
-      cape: function (str) {
-        return str[0].toUpperCase() + str.slice(1);
-      }
+      dayOfWeek: function (date) {
+        let days = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье']
+        return days[date];
+      },
+      main: function () {
+        const dayOfWeekDigit = new Date().getDay();
+        let days = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье']
+        return dayOfWeekDigit[days]
+      },
+      // dayOfWeek2: function (date) {
+      //   let days = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье']
+      //   return days[date];
+      // }
     }
   }
 </script>
 
 <template>
-  <div class="crazy">{{ text }}</div>
-  <div class="crazy">{{ num1 + num2 }}</div>
-  <button class="button" v-on:mouseover="show">mouse</button>
+  <!-- <button v-on:mouseover="show">mouse</button> -->
   <button class="button" @click="show">click</button>
+  <button class="button" @click="main">click</button>
+  {{ dayOfWeekDigit }}
 </template>
 
 <style scoped>
+  /* header {
+  line-height: 1.5;
+}
 
+.logo {
+  display: block;
+  margin: 0 auto 2rem;
+}
+
+@media (min-width: 1024px) {
+  header {
+    display: flex;
+    place-items: center;
+    padding-right: calc(var(--section-gap) / 2);
+  }
+
+  .logo {
+    margin: 0 2rem 0 0;
+  }
+
+  header .wrapper {
+    display: flex;
+    place-items: flex-start;
+    flex-wrap: wrap;
+  }
+} */
 </style>
