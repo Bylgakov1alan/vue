@@ -2,7 +2,10 @@
   export default {
     data() {
       return {
-        cssClass: 'craz',
+        obj: {
+          done: true,
+          selected: false,
+        },
       }
     },
     methods: {
@@ -12,11 +15,21 @@
 </script>
 
 <template>
-  <p :class="cssClass">crazy</p>
+  <p :class="selected">dragon</p>
+  <p :class="obj">steve</p>
 </template>
 
 <style scoped>
-  .craz {
+  .selected {
+    padding: 10px;
+    margin: 10px;
+    background: #08C;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .done {
     padding: 10px;
     margin: 10px;
     background: #08C;
